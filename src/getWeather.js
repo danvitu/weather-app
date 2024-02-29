@@ -14,6 +14,7 @@ async function getWeather(name) {
     JSON.parse(`{"country":"${locationWeather.location.country}",
       "city":"${locationWeather.location.name}",
       "temp_c":"${locationWeather.current.temp_c}",
+      "temp_f":"${locationWeather.current.temp_f}",
       "feelslike_c":"${locationWeather.current.feelslike_c}",
       "wind_kph":"${locationWeather.current.wind_kph}",
       "condition":"${locationWeather.current.condition.text}",

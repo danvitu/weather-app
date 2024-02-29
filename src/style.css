@@ -1,27 +1,91 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
 body {
-  height: 100svh;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 80px 1fr;
 }
 
 header {
+  background-color: rgb(29, 29, 29);
   display: flex;
   justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: white;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.app-icon {
+  height: 50px;
+}
+
+.btn-search {
+  padding: 10px;
+  border-style: none;
+  background-color: rgb(27, 27, 27);
+  color: white;
+  border-radius: 5px;
 }
 
 main {
   display: grid;
-  justify-content: center;
-  grid-template-rows: 50px 1fr;
-  grid-template-columns: 300px;
+  grid-template-rows: 80px 1fr;
+  background-color: aliceblue;
 }
 
 .search-box {
   display: flex;
   justify-content: center;
   gap: 10px;
-  margin: 10px;
+  margin: 20px;
+}
+
+#location {
+  padding: 10px;
 }
 
 .display-box {
   display: grid;
-  margin-left: 15px;
+  grid-auto-rows: min-content;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+span {
+  text-align: center;
+}
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.location {
+  font-size: 3rem;
+}
+
+.wind {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.temp-c,
+.temp-f {
+  font-size: 7rem;
+  font-weight: bold;
+  cursor: pointer;
 }
