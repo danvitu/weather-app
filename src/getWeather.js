@@ -26,7 +26,7 @@ async function getWeather(name) {
     }`);
     return weatherObj;
   } catch (err) {
-    alert('Wrong city name');
+    alert("Wrong city name");
   }
 }
 

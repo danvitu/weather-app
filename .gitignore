@@ -1,6 +1,6 @@
 .cache/
 coverage/
-dist/
+gist/
 node_modules/
 *.log
 
