@@ -1,0 +1,27 @@
+body {
+  height: 100svh;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+}
+
+main {
+  display: grid;
+  justify-content: center;
+  grid-template-rows: 50px 1fr;
+  grid-template-columns: 300px;
+}
+
+.search-box {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px;
+}
+
+.display-box {
+  display: grid;
+  margin-left: 15px;
+}

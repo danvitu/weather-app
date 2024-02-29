@@ -1,9 +1,12 @@
-const name = "James";
+import "./style.css";
+import displayWeather from "./displayWeather";
+import getWeather from "./getWeather";
 
-const person = { first: name };
+const searchBtn = document.querySelector(".btn-search");
+const searchBox = document.querySelector("#location");
 
-console.log(person);
-
-const sayHelloLinting = (fName) => {
-  console.log(`Hello linting, ${fName}`);
-};
+searchBtn.addEventListener("click", async () => {
+  const weather = await getWeather(`${searchBox.value}`);
+  console.log(weather);
+  displayWeather(weather);
+});
