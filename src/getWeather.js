@@ -1,17 +1,21 @@
 async function getWeatherData(location) {
-  const weatherAPI = "f6a31bc29e5349c896785531242502";
-  const response = await fetch(
-    `https://api.weatherapi.com/v1/current.json?key=${weatherAPI}&q=${location}`,
-  );
-  const weatherData = await response.json();
-  console.log(weatherData);
-  return weatherData;
+  try {
+    const weatherAPI = "f6a31bc29e5349c896785531242502";
+    const response = await fetch(
+      `https://api.weatherapi.com/v1/current.json?key=${weatherAPI}&q=${location}`,
+    );
+    const weatherData = await response.json();
+    return weatherData;
+  } catch (err) {
+    alert(err);
+  }
 }
 
 async function getWeather(name) {
-  const locationWeather = await getWeatherData(name);
-  const weatherObj =
-    JSON.parse(`{"country":"${locationWeather.location.country}",
+  try {
+    const locationWeather = await getWeatherData(name);
+    const weatherObj =
+      JSON.parse(`{"country":"${locationWeather.location.country}",
       "city":"${locationWeather.location.name}",
       "temp_c":"${locationWeather.current.temp_c}",
       "temp_f":"${locationWeather.current.temp_f}",
@@ -20,7 +24,10 @@ async function getWeather(name) {
       "condition":"${locationWeather.current.condition.text}",
       "icon":"${locationWeather.current.condition.icon}"
     }`);
-  return weatherObj;
+    return weatherObj;
+  } catch (err) {
+    alert('Wrong city name');
+  }
 }
 
 export default getWeather;
