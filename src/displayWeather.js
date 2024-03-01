@@ -1,6 +1,13 @@
 import Icon from "./icons/wind.png";
+import weatherAppIcon from "./icons/weather-app.png";
 
 const displayWeather = (weather) => {
+  const header = document.querySelector("header");
+  const appIcon = new Image();
+  appIcon.src = weatherAppIcon;
+  appIcon.classList.toggle("app-icon");
+  header.appendChild(appIcon);
+
   const displayBox = document.querySelector(".display-box");
   displayBox.textContent = "";
   const location = document.createElement("span");
